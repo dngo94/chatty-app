@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Text ,View, StyleSheet} from 'react-native';
+import {Text ,View,Image, StyleSheet} from 'react-native';
 
 export default function TabOneScreen(){
    return(
