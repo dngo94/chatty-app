@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {Text ,View, StyleSheet} from 'react-native';
+import {Text ,View,Image, StyleSheet} from 'react-native';
 
-export default function TabOneScreen()
+export default function TabOneScreen(){
    return(
       <View style= {styles.container}>
       <Image source={{uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/elon.png'}} style={styles.image} />
@@ -27,6 +27,11 @@ export default function TabOneScreen()
      width: 60,
      borderRadius: 30,
      marginRight: 10,
+     },
+     row: {
+         flexDirection: 'row' , 
+         justifyContent: 'space-between '
+        
      },
      
     text: {
