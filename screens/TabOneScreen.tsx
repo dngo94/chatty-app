@@ -5,12 +5,15 @@ export default function TabOneScreen(){
    return(
       <View style= {styles.container}>
       <Image source={{uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/elon.png'}} style={styles.image} />
-      <View style = {styles.rightContainer}>
+         <View> style={styles.badgeContainer}>
+           <Text style={styles.badgeText}>4</Text>
+         </View>
+         <View style = {styles.rightContainer}>
        <View style={styles.row}>
          <Text  style={styles.name}> Elon Musk</Text>
          <Text  style={styles.text}> 11:11 AM </Text> 
       </View>
-       <Text style={styles.text}>Hola Hola  coca cola </Text> 
+       <Text numberOfLines={1} style={styles.text}>Hola Hola  coca cola </Text> 
       </View>
       </View>
       );
@@ -28,6 +31,11 @@ export default function TabOneScreen(){
      borderRadius: 30,
      marginRight: 10,
      },
+      badgeContainer: {
+         
+         
+         
+      },
       
       rightContainer: {
          
@@ -36,7 +44,7 @@ export default function TabOneScreen(){
       },
      row: {
          flexDirection: 'row' , 
-         justifyContent: 'space-between ',
+         justifyContent: 'space-between',
          
         
      },
