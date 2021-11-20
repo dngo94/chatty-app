@@ -5,7 +5,7 @@ export default function TabOneScreen(){
    return(
       <View style= {styles.container}>
       <Image source={{uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/elon.png'}} style={styles.image} />
-      <View>
+      <View style = {styles.rightContainer}>
        <View style={styles.row}>
          <Text  style={styles.name}> Elon Musk</Text>
          <Text  style={styles.text}> 11:11 AM </Text> 
@@ -23,20 +23,32 @@ export default function TabOneScreen(){
       padding: 10, 
     },
     image: {
-     height: 60,
-     width: 60,
+     height: 50,
+     width: 50,
      borderRadius: 30,
      marginRight: 10,
      },
+      
+      rightContainer: {
+         
+         flex: 1,
+         justifyContent: 'center',
+      },
      row: {
          flexDirection: 'row' , 
-         justifyContent: 'space-between '
+         justifyContent: 'space-between ',
+         
         
      },
-     
+     name: {
+        fontWeight: 'bold',
+        fontSize: 18,
+        marginBottom: 3,
+     },
     text: {
  
-    fontSize: 30,
-    color: 'blue'
+    color: 'grey',
+  
+       
     }
   });
