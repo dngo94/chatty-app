@@ -9,7 +9,6 @@ import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
 import { ColorSchemeName, Pressable, Image, useWindowDimensions } from 'react-native';
-
 import { Text, View } from '../components/Themed';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -22,6 +21,7 @@ import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../typ
 import { MaterialCommunityIcons, Feather } from '@expo/vector-icons'; 
 import LinkingConfiguration from './LinkingConfiguration';
 import HomeScreen from '../screens/HomeScreen';
+import Auth from '@aws-amplify/auth';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -58,6 +58,9 @@ function RootNavigator() {
 const HomeHeader = (props) => {
   
   const {width} = useWindowDimensions();
+  const signOut = () => {
+    Auth.signOut();
+  };
 
   return (
     <View style={{
@@ -67,10 +70,12 @@ const HomeHeader = (props) => {
       padding: 7,
       alignItems: 'center',
       }}>
+      <Pressable onPress={signOut}>
       <Image 
         source={{ uri: 'https://i.pinimg.com/564x/3a/4b/ae/3a4bae641951d783d4a6cb253c4f8233.jpg' }} 
         style={{width: 30, height: 30, borderRadius: 30,}}
       />
+      </Pressable>
       <Text style={{flex: 1, textAlign: 'center', marginLeft: 50, fontWeight: 'bold', }}>Chatty</Text>
       <Feather name="camera" size={24} color="#3777f0" style= {{marginHorizontal: 10}}/>
       <MaterialCommunityIcons name="dots-vertical" size={24} color="#3777f0" style= {{marginHorizontal: 10}}/>
